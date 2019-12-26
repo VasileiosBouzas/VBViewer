@@ -9,6 +9,7 @@
 #include <QMenuBar>
 #include <QFileDialog>
 #include <QApplication>
+#include <QDebug>
 
 class VBViewer : public QMainWindow
 {

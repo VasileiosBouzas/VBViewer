@@ -2,15 +2,34 @@
 #define SLOTS_H
 
 #include "vbviewer.h"
-#include "utils.h"
+#include "mesh.h"
 
 
 // Import mesh
+static void importMeshDialog(VBViewer *viewer) {
+    QFileDialog dialog(viewer);
+    static bool firstDialog = true;
+
+    // File paths
+    if (firstDialog) {
+        firstDialog = false;
+        const QStringList meshLocations = QStandardPaths::standardLocations(QStandardPaths::DesktopLocation);
+        dialog.setDirectory(meshLocations.isEmpty() ? QDir::currentPath() : meshLocations.last());
+    }
+
+    // Supported files
+    QString supported = "Wavefront OBJ (*.obj);;"
+                        "All Files (*)";
+    QString fileName = dialog.getOpenFileName(viewer,
+                                              "Open File",
+                                              "",
+                                              supported);
+    readMesh(fileName);
+}
+
 void VBViewer::import()
 {
-    QFileDialog dialog(this, "Import File");
-    importMeshDialog(dialog);
-    dialog.exec();
+    importMeshDialog(this);
 }
 
 // Exit app

@@ -1,6 +1,6 @@
 #include "vbviewer.h"
 #include "slots.h"
-#include "utils.h"
+#include "mesh.h"
 
 
 VBViewer::VBViewer()

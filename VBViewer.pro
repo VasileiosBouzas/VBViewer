@@ -20,8 +20,8 @@ SOURCES += \
     vbviewer.cpp
 
 HEADERS += \
+    mesh.h \
     slots.h \
-    utils.h \
     vbviewer.h
 
 FORMS +=
