@@ -1,8 +1,8 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <QFileDialog>
-#include <QStandardPaths>
+#include "vbviewer.h"
+
 
 inline static void importMeshDialog(QFileDialog &dialog) {
     static bool firstDialog = true;

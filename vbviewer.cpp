@@ -1,8 +1,6 @@
 #include "vbviewer.h"
-#include "ui_vbviewer.h"
+#include "slots.h"
 #include "utils.h"
-#include <QDesktopWidget>
-#include <QStyle>
 
 
 VBViewer::VBViewer()
@@ -10,10 +8,6 @@ VBViewer::VBViewer()
     loadStyle();
     createActions();
     createMenus();
-}
-
-VBViewer::~VBViewer()
-{
 }
 
 void VBViewer::loadStyle() {
@@ -78,26 +72,6 @@ void VBViewer::createMenus()
     viewMenu = this->menuBar()->addMenu("View");
     viewMenu->addAction(renderFullAction);
     viewMenu->addAction(exitFullAction);
-}
-
-// Import mesh
-void VBViewer::import()
-{
-    QFileDialog dialog(this, "Import File");
-    importMeshDialog(dialog);
-    dialog.exec();
-}
-
-// Exit app
-void VBViewer::exit()
-{
-    QApplication::quit();
-}
-
-// Render/exit full screen
-void VBViewer::fullScreen()
-{
-    !this->isFullScreen() ? this->showFullScreen() : this->showNormal();
 }
 
 

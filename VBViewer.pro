@@ -20,6 +20,7 @@ SOURCES += \
     vbviewer.cpp
 
 HEADERS += \
+    slots.h \
     utils.h \
     vbviewer.h
 

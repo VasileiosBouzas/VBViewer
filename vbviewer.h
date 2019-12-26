@@ -2,6 +2,13 @@
 #define VBVIEWER_H
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QStandardPaths>
+#include <QDesktopWidget>
+#include <QAction>
+#include <QStyle>
+#include <QMenuBar>
+#include <QFileDialog>
+#include <QApplication>
 
 class VBViewer : public QMainWindow
 {
@@ -9,7 +16,6 @@ class VBViewer : public QMainWindow
 
 public:
     VBViewer();
-    ~VBViewer();
 
 private slots:
     void import();
