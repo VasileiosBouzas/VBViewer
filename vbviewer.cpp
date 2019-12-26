@@ -23,6 +23,7 @@ void VBViewer::loadStyle() {
     int height = availableSize.height() * 0.5;
     QSize newSize(width, height);
 
+    // Alignment
     setGeometry(
         QStyle::alignedRect(
             Qt::LeftToRight,
