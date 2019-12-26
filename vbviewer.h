@@ -3,10 +3,6 @@
 #include <QMainWindow>
 #include <QFileDialog>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class VBViewer; }
-QT_END_NAMESPACE
-
 class VBViewer : public QMainWindow
 {
     Q_OBJECT
@@ -18,14 +14,20 @@ public:
 private slots:
     void import();
     void exit();
+    void fullScreen();
 
 private:
-    Ui::VBViewer *ui;
+    QMenuBar *menubar;
 
     QMenu *fileMenu;
     QAction *importAction;
     QAction *exitAction;
 
+    QMenu *viewMenu;
+    QAction *renderFullAction;
+    QAction *exitFullAction;
+
+    void loadStyle();
     void createActions();
     void createMenus();
 };

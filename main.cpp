@@ -1,11 +1,11 @@
-#include "vbviewer.h"
-
 #include <QApplication>
+#include <QMainWindow>
+#include <vbviewer.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-    QApplication a(argc, argv);
-    VBViewer w;
-    w.show();
-    return a.exec();
+    QApplication app(argc, argv);
+    VBViewer vb;
+    vb.show();
+    return app.exec();
 }

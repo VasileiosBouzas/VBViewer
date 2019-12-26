@@ -20,10 +20,10 @@ SOURCES += \
     vbviewer.cpp
 
 HEADERS += \
+    utils.h \
     vbviewer.h
 
-FORMS += \
-    vbviewer.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
